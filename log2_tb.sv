@@ -56,7 +56,7 @@ initial
       if(!erro)  $display("OK");
     end
 
-  function byte Log2Teorico(input bit[7:0] entr_u);
+	function byte Log2Teorico(input bit[7:0] entr_u); // mesma função desenvolvida em alto nivel para que possa ser usada como comparador do resultado
 	byte resultadoTeorico;
 	real aux_u;
 	int parteI_u, z_u;
@@ -81,12 +81,12 @@ initial
 		end
     while (parteI_u)
 	begin
-		resultadoTeorico += 8'b001_00000;
+		resultadoTeorico += 8'b0010_0000;
 		parteI_u--;
 		end
     while (z_u)
 		begin
-		resultadoTeorico += 8'b000_00001;
+		resultadoTeorico += 8'b0000_0001;
 		z_u--;
 		end
 	return resultadoTeorico;
